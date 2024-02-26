@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ESS.Authentication.DAL.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESS.Authentication.DAL.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LogInResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisposableCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" type="tns:ResultEnum" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogInResponse" nillable="true" type="tns:LogInResponse" />
+  <xs:simpleType name="ResultEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="WrongUserPass" />
+      <xs:enumeration value="DeactiveAccount" />
+      <xs:enumeration value="NeedCode" />
+      <xs:enumeration value="LockedAccount" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResultEnum" nillable="true" type="tns:ResultEnum" />
+  <xs:simpleType name="UserStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="ActiveUnlock" />
+      <xs:enumeration value="DeactiveUnlock" />
+      <xs:enumeration value="ActiveLock" />
+      <xs:enumeration value="DeactiveLock" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserStatus" nillable="true" type="tns:UserStatus" />
+  <xs:simpleType name="PasswordChaneResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="SuccessAndMessageNotSent" />
+      <xs:enumeration value="IncorrectOldPass" />
+      <xs:enumeration value="UnacceptablePass" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PasswordChaneResult" nillable="true" type="tns:PasswordChaneResult" />
+  <xs:complexType name="MainSecurityUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonnelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainSecurityUser" nillable="true" type="tns:MainSecurityUser" />
+  <xs:simpleType name="UpdateUserResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="SuccessAndMessageNotSent" />
+      <xs:enumeration value="InvalidMobileNumber" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UpdateUserResult" nillable="true" type="tns:UpdateUserResult" />
+  <xs:simpleType name="GenerateUserResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="SuccessAndMessageNotSent" />
+      <xs:enumeration value="RepeatedUserName" />
+      <xs:enumeration value="RepeatedPersonnelCode" />
+      <xs:enumeration value="InvalidMobileNumber" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GenerateUserResult" nillable="true" type="tns:GenerateUserResult" />
+  <xs:complexType name="ArrayOfMainSecurityApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MainSecurityApplication" nillable="true" type="tns:MainSecurityApplication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMainSecurityApplication" nillable="true" type="tns:ArrayOfMainSecurityApplication" />
+  <xs:complexType name="MainSecurityApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainSecurityApplication" nillable="true" type="tns:MainSecurityApplication" />
+  <xs:complexType name="ArrayOfMainSecurityUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MainSecurityUser" nillable="true" type="tns:MainSecurityUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMainSecurityUser" nillable="true" type="tns:ArrayOfMainSecurityUser" />
+  <xs:complexType name="ArrayOfMainSecurityAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MainSecurityAction" nillable="true" type="tns:MainSecurityAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMainSecurityAction" nillable="true" type="tns:ArrayOfMainSecurityAction" />
+  <xs:complexType name="MainSecurityAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainSecurityAction" nillable="true" type="tns:MainSecurityAction" />
+  <xs:complexType name="ArrayOfMainSecurityRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MainSecurityRole" nillable="true" type="tns:MainSecurityRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMainSecurityRole" nillable="true" type="tns:ArrayOfMainSecurityRole" />
+  <xs:complexType name="MainSecurityRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MainSecurityRole" nillable="true" type="tns:MainSecurityRole" />
+  <xs:complexType name="ArrayOfLogData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogData" nillable="true" type="tns:LogData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogData" nillable="true" type="tns:ArrayOfLogData" />
+  <xs:complexType name="LogData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogData" nillable="true" type="tns:LogData" />
+  <xs:complexType name="ArrayOfTreeMenuModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TreeMenuModel" nillable="true" type="tns:TreeMenuModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTreeMenuModel" nillable="true" type="tns:ArrayOfTreeMenuModel" />
+  <xs:complexType name="TreeMenuModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfTreeMenuModel" />
+      <xs:element minOccurs="0" name="HasChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Icon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TreeMenuModel" nillable="true" type="tns:TreeMenuModel" />
+  <xs:complexType name="TreeMenuStatusModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TreeChildNodeToExpand" type="xs:int" />
+      <xs:element minOccurs="0" name="TreeRootNodeToExpand" type="xs:int" />
+      <xs:element minOccurs="0" name="TreeURL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TreeMenuStatusModel" nillable="true" type="tns:TreeMenuStatusModel" />
+</xs:schema>

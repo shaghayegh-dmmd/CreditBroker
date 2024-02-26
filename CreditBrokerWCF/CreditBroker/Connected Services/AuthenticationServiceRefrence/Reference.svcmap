@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="948a3593-3bfe-4c66-811b-94e08f15838a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ssv-main.cr24.ir:8123/AuthenticationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuthenticationService.xsd" MetadataType="Schema" ID="3e0726ed-4011-4fca-8bfe-3bc40b63e6b3" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AuthenticationService.disco" MetadataType="Disco" ID="41d382a4-e7cc-45a3-9ff6-c9d72c4fc447" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?disco" />
+    <MetadataFile FileName="AuthenticationService.wsdl" MetadataType="Wsdl" ID="a682530e-2c88-4f11-9ec2-9ba95bd22470" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?wsdl" />
+    <MetadataFile FileName="AuthenticationService1.xsd" MetadataType="Schema" ID="72f5bdb3-543b-4ef5-a688-4316570c4b4e" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AuthenticationService2.xsd" MetadataType="Schema" ID="e3a331c7-476e-4c7d-998e-e8eddac596a4" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AuthenticationService3.xsd" MetadataType="Schema" ID="77e7aaf3-9a05-4b9e-937c-51d125843a53" SourceId="1" SourceUrl="http://ssv-main.cr24.ir:8123/AuthenticationService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

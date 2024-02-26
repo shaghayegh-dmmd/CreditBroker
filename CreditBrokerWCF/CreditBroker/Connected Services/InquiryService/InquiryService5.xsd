@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" />
+  <xs:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" />
+  <xs:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" />
+  <xs:element name="GetPostInfoWithPhoneNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="areaCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phoneNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="probableNationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostInfoWithPhoneNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetPostInfoWithPhoneNumberResult" nillable="true" type="q1:FullPostInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostInfoWithPostCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="probableNationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostInfoWithPostCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetPostInfoWithPostCodeResult" nillable="true" type="q2:FullPostInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineRegisterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineRegisterInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOnlineRegisterInfoResult" nillable="true" type="q3:FlatRegisterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOnlineCheckInfoResult" nillable="true" type="q4:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineLegalCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineLegalCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOnlineLegalCheckInfoResult" nillable="true" type="q5:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOnlineFacilityInfoResult" nillable="true" type="q6:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineLegalFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineLegalFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOnlineLegalFacilityInfoResult" nillable="true" type="q7:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetOnlineFullCheckInfoResult" nillable="true" type="q8:FullCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetOnlineFullFacilityInfoResult" nillable="true" type="q9:FullFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullLegalCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullLegalCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetOnlineFullLegalCheckInfoResult" nillable="true" type="q10:FullCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullLegalFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineFullLegalFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetOnlineFullLegalFacilityInfoResult" nillable="true" type="q11:FullFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflinePersonInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflinePersonInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOfflinePersonInfoResult" nillable="true" type="q12:FlatPersonInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineRegisterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineRegisterInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOfflineRegisterInfoResult" nillable="true" type="q13:FlatRegisterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOfflineCheckInfoResult" nillable="true" type="q14:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOfflineFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetOfflineFacilityInfoResult" nillable="true" type="q15:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThisMonthRegisterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThisMonthRegisterInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetThisMonthRegisterInfoResult" nillable="true" type="q16:FlatRegisterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetTodayCheckInfoResult" nillable="true" type="q17:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayLegalCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayLegalCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetTodayLegalCheckInfoResult" nillable="true" type="q18:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetTodayFacilityInfoResult" nillable="true" type="q19:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayLegalFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayLegalFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetTodayLegalFacilityInfoResult" nillable="true" type="q20:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetTodayFullCheckInfoResult" nillable="true" type="q21:FullCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetTodayFullFacilityInfoResult" nillable="true" type="q22:FullFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullLegalCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullLegalCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetTodayFullLegalCheckInfoResult" nillable="true" type="q23:FullCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullLegalFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTodayFullLegalFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" minOccurs="0" name="GetTodayFullLegalFacilityInfoResult" nillable="true" type="q24:FullFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableRegisterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableRegisterInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetLastAvailableRegisterInfoResult" nillable="true" type="q25:FlatRegisterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetLastAvailableCheckInfoResult" nillable="true" type="q26:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableLegalCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableLegalCheckInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetLastAvailableLegalCheckInfoResult" nillable="true" type="q27:FlatCheckInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetLastAvailableFacilityInfoResult" nillable="true" type="q28:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableLegalFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sabtPlaceCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAvailableLegalFacilityInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" minOccurs="0" name="GetLastAvailableLegalFacilityInfoResult" nillable="true" type="q29:FlatFacilityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogInquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inquiryDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inquiryType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestTime" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="responseTime" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOnlyRegisterInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOnlyCheckInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOnlyFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOnlyCheckFacilityInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSamaChequesResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSamaChequesResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" minOccurs="0" name="GetSamaChequesResultResult" nillable="true" type="q30:SamaChequesResponseResultWithJson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCbiSamatResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nationalCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCbiSamatResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" minOccurs="0" name="GetCbiSamatResultResult" nillable="true" type="q31:CbiSamatResponseResultWithJson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

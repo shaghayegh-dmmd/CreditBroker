@@ -1,0 +1,124 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css/style.css")
+    @*@Styles.Render("~/Content/bootstrap-rtl.css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/Scripts/jquery-3.4.1.min.js")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
+
+
+</head>
+<body id="body" class="clear-fix  k-rtl">
+    <header class="main-headerS" dir="rtl">
+        <div class="logo" id="logo">
+            <span> اعتبارسنجی اشخاص حقوقی ویژه شرکت مالی </span>
+        </div>
+        <div class="menuBar">
+            <img src="~/Content/Images/menu.png" id="imgMenuBar" />
+        </div>
+    </header>
+    <aside class="main-sidebar" id="main-sidebar">
+        <section class="sidebar">
+            <ul id="menu-wrapper" class="sidebar-menu" data-widget="tree">
+            </ul>
+
+        </section>
+    </aside>
+    <div class="content-wrapper">
+
+        <div id="header-wrapper">
+
+        </div>
+
+        <div id="content-wrapper">
+        </div>
+        <div class="render-body">
+            <div id="ajaxLoading" class="transparentAjax">
+            </div>
+            @RenderBody()
+
+
+        </div>
+
+        <div id="ajaxLoading" class="transparentAjax">
+        </div>
+
+    </div>
+    <footer class="main-footer text-center" style="color: gray; margin-right:0px;">
+
+        <div style="padding-top: 20px;font-size: 10px; text-align: center;">
+            <strong>
+                « تمامی حقوق این سامانه متعلق به بانک سامان است »
+            </strong>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+
+    /*menu-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+    //$("#imgMenuBar").click(function () {
+
+    //    if ($("#main-sidebar").is(":hidden")) {
+
+    //        $('#main-sidebar').show();
+
+    //        $('#logo').show();
+
+
+    //        $(".content-wrapper").css("margin-right", "183px");
+    //        $(".menuBar").css("margin-right", "183px");
+    //        $(".main-footer").css("margin-right", "183px");
+
+
+    //    }
+    //    else if ($('#main-sidebar').is(":visible")) {
+    //        $('#main-sidebar').hide();
+    //        if ($(window).width() > 600) {
+    //            $('#logo').hide();
+    //        }
+
+    //        $(".content-wrapper").css("margin-right", "0px");
+    //        $(".menuBar").css("margin-right", "0px");
+    //        $(".main-footer").css("margin-right", "0px");
+
+    //    }
+
+
+    //});
+
+    //$(window).on('resize', function () {
+    //    var win = $(this); //this = window
+
+    //    if (win.width() >= 600) {
+
+    //        if ($('#main-sidebar').is(":hidden")) {
+
+    //            $('#logo').hide();
+    //        }
+    //    }
+    //    else if (win.width() < 600) {
+    //        if ($('#main-sidebar').is(":hidden")) {
+
+    //            $('#logo').show();
+    //        }
+
+    //    }
+    //});
+
+
+
+
+</script>
+
+</html>

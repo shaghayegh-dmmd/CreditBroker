@@ -1,0 +1,16 @@
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.csprojAssemblyReference.cache
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.csproj.CoreCompileInputs.cache
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\CreditBroker.dll.config
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\CreditBroker.dll
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\CreditBroker.pdb
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\EntityFramework.dll
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\EntityFramework.SqlServer.dll
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\Newtonsoft.Json.dll
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\EntityFramework.xml
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\EntityFramework.SqlServer.xml
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\bin\Newtonsoft.Json.xml
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.Migrations.firstmig.resources
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.csproj.GenerateResource.cache
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.csproj.CopyComplete
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.dll
+C:\tfs\CsAndCr\CreditBroker.WCF\CreditBrokerWCF\CreditBroker\obj\Debug\CreditBroker.pdb

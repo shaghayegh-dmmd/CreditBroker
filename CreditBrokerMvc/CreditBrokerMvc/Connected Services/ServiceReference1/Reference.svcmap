@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7a8e5803-4036-4649-8b34-e22e633cebdd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62662/BrokerServices.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BrokerServices.wsdl" MetadataType="Wsdl" ID="aef60fa4-1512-40df-9260-4021649ee7d3" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?wsdl" />
+    <MetadataFile FileName="BrokerServices.xsd" MetadataType="Schema" ID="38f9e0b5-97f5-4a1d-863a-6e046eea4adc" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="BrokerServices1.xsd" MetadataType="Schema" ID="940ccbc2-3db2-4b55-9507-3ec83ccf73b4" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="BrokerServices2.xsd" MetadataType="Schema" ID="67a5fac6-d908-481a-a9eb-3ea907cb8d66" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="BrokerServices3.xsd" MetadataType="Schema" ID="eb984721-40a9-49eb-8203-ebbf9bbc1929" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="BrokerServices4.xsd" MetadataType="Schema" ID="2da3dcc2-8ed3-4c9a-a6ed-ae6a5ca33701" SourceId="1" SourceUrl="http://localhost:62662/BrokerServices.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

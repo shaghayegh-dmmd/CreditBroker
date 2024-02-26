@@ -1,0 +1,18 @@
+﻿@using Stimulsoft.Report.Mvc
+
+@using StiMvcBaseHelper = Stimulsoft.Report.Mvc.StiMvcBaseHelper
+@{
+    ViewBag.Title = "پیش نمایش";
+    Layout = null;
+}
+
+@StiMvcBaseHelper.Stimulsoft(Html).StiMvcViewer(new StiMvcViewerOptions()
+{
+
+  Actions =
+  {
+     GetReport = "ShowCreditStimul",
+      ViewerEvent = "viewerEvent"
+  }
+
+})

@@ -1,0 +1,723 @@
+﻿@model CreditBrokerMvc.Models.RequestModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+
+
+<section class="design-process-section" id="process-tab" dir="rtl">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- design process steps-->
+                <!-- Nav tabs -->
+                <div class="list">
+                    <ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#discover" aria-controls="discover" role="tab" data-toggle="tab">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                <p>اطلاعات شرکت</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#strategy" aria-controls="strategy" role="tab" data-toggle="tab">
+                                <i class="fa fa-send-o" aria-hidden="true"></i>
+                                <p> نسبت های مالی</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#optimization" aria-controls="optimization" role="tab" data-toggle="tab">
+                                <i class="fa fa-qrcode" aria-hidden="true"></i>
+                                <p>اعتبارسنجی مدیران اجرایی</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#content" aria-controls="content" role="tab" data-toggle="tab">
+                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                <p>متغیرهای عملکرد کارگزاری</p>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#reporting" aria-controls="reporting" role="tab" data-toggle="tab">
+                                <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                <p>متغیرهای کسب و کار</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="listHide" id="enable"></div>
+                </div>
+                <!-- end design process steps-->
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="discover">
+                        <div class="design-process-content">
+                            <h3 class="semi-bold">اطلاعات شرکت</h3>
+
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "signupform-1" }))
+                            {
+
+
+                                <div class="form-horizontal">
+
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CompanyNationalCode, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.CompanyNationalCode, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CompanyNationalCode, "", new { @class = "text-danger", @type = "number" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", id = "val" } })
+                                                    @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <ul class="list-inline">
+
+                                        <li><button type="button" class="default-btn prev-step skip-btn">لغو</button></li>
+
+
+                                        <a href="" id="redirect" aria-controls="strategy" ata-toggle="" data-target="" role="tab">
+                                            <button type="submit" value="submit" class="default-btn next-step submit-form" form="signupform-1">ادامه</button>
+                                        </a>
+
+
+                                    </ul>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="strategy">
+                        <div class="design-process-content">
+                            <h3 class="semi-bold"> نسبت های مالی<span class="red"> (تمامی مبالغ به میلیون ریال وارد شود) </span></h3>
+                            <hr />
+
+
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "signupform-2" }))
+                            {
+
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.EzharHesabres, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.FinancialRatio.EzharHesabres, (IEnumerable<SelectListItem>)ViewBag.EzharHesabres, "انتخاب کنید.....", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.EzharHesabres, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.NetProfit, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.NetProfit, new { htmlAttributes = new { @id = "NetProfit", @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.NetProfit, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.SumDaramadAmaliaty, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.SumDaramadAmaliaty, new { htmlAttributes = new { @id = "SumDaramadAmaliaty", @class = "form-control", @placeholder = "مبلغ به میلیون ریال", @onchange = "signupform();" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.SumDaramadAmaliaty, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.TotalDebt, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.TotalDebt, new { htmlAttributes = new { @id = "TotalDebt", @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.TotalDebt, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.SumDaraei, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.SumDaraei, new { htmlAttributes = new { @id = "SumDaraei", @class = "form-control", @placeholder = "مبلغ به میلیون ریال", @onchange = "signupform();" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.SumDaraei, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.FinancialCost, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.FinancialCost, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.FinancialCost, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FinancialRatio.HoghogheSahebanSaham, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FinancialRatio.HoghogheSahebanSaham, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.FinancialRatio.HoghogheSahebanSaham, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <ul class="list-inline">
+                                        <a href="#discover" aria-controls="discover" role="tab" data-toggle="tab">
+                                            <li><button type="button" class="default-btn prev-step">برگشت</button></li>
+                                        </a>
+                                        <li><button type="button" class="default-btn next-step skip-btn">لغو</button></li>
+
+                                        <a href="" id="redirect-2" aria-controls="optimization" ata-toggle="tab" data-target="" role="tab">
+                                            <button type="submit" value="submit" class="default-btn next-step submit-form" form="signupform-2" id="check">ادامه</button>
+                                        </a>
+                                    </ul>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="optimization">
+                        <div class="design-process-content">
+                            <h3 class="semi-bold">اعتبارسنجی مدیران اجرایی</h3>
+                            <hr />
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "signupform-3" }))
+                            {
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        @*<div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CreditCompanyAndManager.CompanyNationalCode, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.CreditCompanyAndManager.CompanyNationalCode, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CreditCompanyAndManager.CompanyNationalCode, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>*@
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CreditCompanyAndManager.ManagerNationalCode1, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.CreditCompanyAndManager.ManagerNationalCode1, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CreditCompanyAndManager.ManagerNationalCode1, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CreditCompanyAndManager.ManagerNationalCode2, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.CreditCompanyAndManager.ManagerNationalCode2, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CreditCompanyAndManager.ManagerNationalCode2, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.CreditCompanyAndManager.ManagerNationalCode3, htmlAttributes: new { @class = "control-label col-md-4" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.CreditCompanyAndManager.ManagerNationalCode3, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.CreditCompanyAndManager.ManagerNationalCode3, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <ul class="list-inline">
+                                        <a href="#strategy" aria-controls="strategy" role="tab" data-toggle="tab">
+                                            <li><button type="button" class="default-btn prev-step">برگشت</button></li>
+                                        </a>
+                                        <li><button type="button" class="default-btn next-step skip-btn">لغو</button></li>
+                                        <a href="" id="redirect-3" aria-controls="content" ata-toggle="tab" data-target="" role="tab">
+                                            <button type="submit" value="submit" class="default-btn next-step submit-form" form="signupform-3">ادامه</button>
+                                        </a>
+                                    </ul>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="content">
+                        <div class="design-process-content">
+
+                            <h3 class="semi-bold"> متغیرهای عملکرد کارگزاری<span class="red"> (تمامی مبالغ به میلیون ریال وارد شود) </span></h3>
+                            <hr />
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "signupform-4" }))
+                            {
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.BrokerRank, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.BrokerRank, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.BrokerRank, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.TarkibSahamdaran, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BrokerPerformanceVariables.TarkibSahamdaran, (IEnumerable<SelectListItem>)ViewBag.TarkibSahamdaran, "انتخاب کنید.....", new { @class = "form-control" })
+
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.TarkibSahamdaran, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12 redp">در صورت نداشتن تسهیلات دریافت شده و تخصیص داده شده فیلدهای مربوطه را خالی بگذارید</p>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.SumOfFacilityToCustomer, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.SumOfFacilityToCustomer, new { htmlAttributes = new { @id = "SumOfFacilityToCustomer", @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.SumOfFacilityToCustomer, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.SumOfReceiveFacility, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.SumOfReceiveFacility, new { htmlAttributes = new { @id = "SumOfReceiveFacility", @class = "form-control", @placeholder = "مبلغ به میلیون ریال", @onchange = "signupform4();" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.SumOfReceiveFacility, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.LastYearIncomeReported, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.LastYearIncomeReported, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.LastYearIncomeReported, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.PreviousLastYearIncomeReported, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.PreviousLastYearIncomeReported, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.PreviousLastYearIncomeReported, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.NumberOfbranch, htmlAttributes: new { @class = "control-label col-md-8" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.NumberOfbranch, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.NumberOfbranch, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.NumberOfPersonnel, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.NumberOfPersonnel, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.NumberOfPersonnel, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.MojavezSabadGardani, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BrokerPerformanceVariables.MojavezSabadGardani, new List<SelectListItem>
+                                                       ()
+                                                       {
+                                                       new SelectListItem() { Text = "دارد", Value = "True" },
+                                                       new SelectListItem() { Text = "ندارد", Value = "False"}
+                                                       }, "انتخاب کنید.....", new { @class = "form-control" })
+
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.MojavezSabadGardani, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.MojavezMoamelatKala, htmlAttributes: new { @class = "control-label col-md-12" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BrokerPerformanceVariables.MojavezMoamelatKala, new List<SelectListItem>
+                                                        ()
+                                                        {
+                                                        new SelectListItem() { Text = "دارد", Value = "True" },
+                                                        new SelectListItem() { Text = "ندارد", Value = "False"}
+                                                        }, "انتخاب کنید.....", new { @id = "flag", @class = "form-control" })
+
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.MojavezMoamelatKala, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.AmountOfValueAtRisk, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.AmountOfValueAtRisk, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.AmountOfValueAtRisk, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.SarmayehSabti, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.SarmayehSabti, new { htmlAttributes = new { @class = "form-control", @placeholder = "مبلغ به میلیون ریال" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.SarmayehSabti, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BrokerPerformanceVariables.EmtiazCommitteePayeshRisk, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BrokerPerformanceVariables.EmtiazCommitteePayeshRisk, new { htmlAttributes = new { @class = "form-control", @placeholder = "اعداد بین 0 تا 5 تا دو رقم اعشار" } })
+                                                    @Html.ValidationMessageFor(model => model.BrokerPerformanceVariables.EmtiazCommitteePayeshRisk, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                    </div>
+                                    <ul class="list-inline">
+                                        <a href="#optimization" aria-controls="optimization" role="tab" data-toggle="tab">
+                                            <li><button type="button" class="default-btn prev-step">برگشت</button></li>
+                                        </a>
+                                        <li><button type="button" class="default-btn next-step skip-btn">لغو</button></li>
+                                        <a href="" id="redirect-4" aria-controls="reporting" ata-toggle="tab" data-target="" role="tab">
+                                            <button type="submit" value="submit" class="default-btn next-step submit-form" form="signupform-4" id="checkForm4">ادامه</button>
+                                        </a>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="reporting">
+                        <div class="design-process-content">
+                            <h3>متغیرهای کسب و کار</h3>
+                            <hr />
+                            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "signupform-5" }))
+                            {
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BusinessVaribales.CompanyActivityTime, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BusinessVaribales.CompanyActivityTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.BusinessVaribales.CompanyActivityTime, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BusinessVaribales.ExperinceOfManager, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.BusinessVaribales.ExperinceOfManager, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.BusinessVaribales.ExperinceOfManager, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BusinessVaribales.RelatedEducationOfManager, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BusinessVaribales.RelatedEducationOfManager, new List<SelectListItem>
+                                                        ()
+                                                        {
+                                                        new SelectListItem() { Text = "مرتبط", Value = "True" },
+                                                        new SelectListItem() { Text = "غیر مرتبط", Value = "False"}
+                                                        }, "انتخاب کنید.....", new { @class = "form-control" })
+
+                                                    @Html.ValidationMessageFor(model => model.BusinessVaribales.RelatedEducationOfManager, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BusinessVaribales.OwnerShipOfLocation, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BusinessVaribales.OwnerShipOfLocation, (IEnumerable<SelectListItem>)ViewBag.OwnerShipOfLocation, "انتخاب کنید.....", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.BusinessVaribales.OwnerShipOfLocation, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.BusinessVaribales.EducationLevelOfManager, htmlAttributes: new { @class = "control-label col-md-6" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(model => model.BusinessVaribales.EducationLevelOfManager, (IEnumerable<SelectListItem>)ViewBag.EducationLevelOfManager, "انتخاب کنید...", new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.BusinessVaribales.EducationLevelOfManager, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <ul class="list-inline">
+                                        <a href="#content" aria-controls="content" role="tab" data-toggle="tab">
+                                            <li><button type="button" class="default-btn prev-step">برگشت</button></li>
+                                        </a>
+                                        <li><button type="button" class="default-btn next-step skip-btn">لغو</button></li>
+
+                                        <button type="submit" value="Create" class="default-btn next-step" id="save">ثبت و محاسبه اطلاعات</button>
+
+                                    </ul>
+
+                                </div>
+                            }
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // script for tab steps
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+        var href = $(e.target).attr('href');
+        var $curr = $(".process-model  a[href='" + href + "']").parent();
+
+        $('.process-model li').removeClass();
+
+        $curr.addClass("active");
+        $curr.prevAll().addClass("visited");
+    });
+
+    // end  script for tab steps
+    var count = 20;
+    $(".submit-form").click(function (e) {
+
+        var Form = $(e.target).attr('form');
+        var Redirect = $(e.target).parent().attr('id');
+        var link = $(e.target).parent().attr('aria-controls');
+        console.log(Redirect);
+        e.preventDefault();
+
+        if (this.id == "check") {
+            signupform();
+        }
+        
+        if (this.id == "checkForm4") {
+            signupform4();
+        }
+
+        $.validator.unobtrusive.parse($('#' + Form));
+
+        $('#' + Form).validate();
+        
+        if ($('#' + Form).valid()) {
+
+            console.log("yes");
+
+            if (!$('#' + Redirect).hasClass("redirect")){
+                console.log("yes2");
+
+                $('#' + Redirect).attr('href', '#' + link);
+                $('#' + Redirect).addClass("redirect");
+                $('#' + Redirect).attr('data-toggle', 'tab');
+                $('#' + Redirect).attr('data-target', '#' + link);
+
+                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+                    var href = $(e.target).attr('href');
+                    var $curr = $(".process-model  a[href='" + href + "']").parent();
+
+                    $('.process-model li').removeClass();
+
+                    $curr.addClass("active");
+                    $curr.prevAll().addClass("visited");
+                });
+
+                $('#' + Redirect).trigger('click');
+                count = count + 20;
+                $('#enable').css("right", count +"%");
+
+            }
+
+
+        } else {
+                alert("not Valid");
+        }
+
+    });
+
+    //save form
+
+ $("#save").click(function (event) {
+     var companyNA = $("#CompanyNationalCode").val();
+
+     event.preventDefault();
+     var data = $("Form#signupform-1, Form#signupform-2, Form#signupform-3, Form#signupform-4, Form#signupform-5").serialize();
+     //console.log(data);
+     $.ajax({
+         url:'@Url.Action("Create", "Home")',
+         type: "POST",
+
+         data: data,
+
+         success: function (response) {
+             console.log(response);
+             if (response == "True") {
+
+                 alert(companyNA);
+                window.location.href = '@Url.Action("PreviewScore", "Home")' + "?CompanyNationalCode="+companyNA;
+             }
+         },
+         error: function (error) {
+             console.log("error:" + error);
+             //$('.something').html("خطا در برقراری ارتباط با سرور! لطفا دوباره تلاش کنید.");
+             //$('.something').css('color', 'red');
+             //$("#ajaxform")[0].reset();
+         }
+     });
+ });
+
+    //check CompanyNationalCode
+    $("#CompanyNationalCode").change(function (e) {
+        $("#CompanyNationalCode").validate();
+
+        if ($("#CompanyNationalCode").valid()) {
+
+
+            var data = $("#CompanyNationalCode").val();
+            console.log(data);
+            $.ajax({
+
+              url: '@Url.Action("CheckNationalCode", "Home")',
+              type: "POST",
+                data: { CompanyNationalCode: data},
+
+                success: function (response) {
+                    if (response=="True") {
+
+                        var url = '@Url.Action("PreviewScore", "Home")' + "?CompanyNationalCode=" + data;
+                        window.location.href = url;
+                        //window.open (url);
+                    }
+                    else {
+
+                    }
+
+         },
+         error: function (error) {
+             console.log("error:" + error);
+
+         }
+     });
+        }
+    });
+
+    // condition
+
+    function signupform() {
+
+        $("#SumDaramadAmaliaty").validate();
+
+        if ($("#SumDaramadAmaliaty").valid()) {
+            if ($("#SumDaramadAmaliaty").val() <= $("#NetProfit").val()) {
+                alert("سودخالص نمی تواند از جمع درآمد عملیاتی بیشتر باشد");
+                $('#signupform-2').valid() = false;
+            }
+           
+        }
+
+        $("#SumDaraei").validate();
+
+        if ($("#SumDaraei").valid()) {
+            if ($("#SumDaraei").val() < $("#TotalDebt").val()) {
+                alert("مجموع بدهی نمی تواند از مجموع دارایی ها بیشتر باشد");
+                $('#signupform-2').valid() = false;
+            }
+
+        }
+    };
+
+
+    function signupform4() {
+
+    $("#SumOfReceiveFacility").validate();
+
+    if ($("#SumOfReceiveFacility").valid()) {
+        if ($("#SumOfReceiveFacility").val() < $("#SumOfFacilityToCustomer").val()) {
+            alert("مجموع تسهیلات تخصیص داده شده برای مشتریان  نمی تواند از مجموع تسهیلات دریافت شده توسط شرکت بیشتر باشد");
+            $('#signupform-4').valid() = false;
+        }
+
+        }
+        }
+</script>

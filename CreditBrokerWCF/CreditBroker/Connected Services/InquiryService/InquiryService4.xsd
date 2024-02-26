@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="FlatRegisterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeathDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeathStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FatherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenasnameNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenasnameSeri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenasnameSerial" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatRegisterInfo" nillable="true" type="tns:FlatRegisterInfo" />
+  <xs:complexType name="FlatCheckInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChecksAmount" type="xs:long" />
+      <xs:element minOccurs="0" name="ChecksCount" type="xs:int" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatCheckInfo" nillable="true" type="tns:FlatCheckInfo" />
+  <xs:complexType name="FlatFacilityInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmBedehi" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmMashkuk" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmMoavagh" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmOriginal" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmSarResid" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmTahodST" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmTashilat" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatFacilityInfo" nillable="true" type="tns:FlatFacilityInfo" />
+  <xs:complexType name="FlatPersonInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SabtCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SabtDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SabtNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlatPersonInfo" nillable="true" type="tns:FlatPersonInfo" />
+</xs:schema>

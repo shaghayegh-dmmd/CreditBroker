@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InquiryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" />
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FlatModels" />
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" />
+      <xsd:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInquiryService_GetPostInfoWithPhoneNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostInfoWithPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetPostInfoWithPhoneNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostInfoWithPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetPostInfoWithPostCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostInfoWithPostCode" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetPostInfoWithPostCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostInfoWithPostCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineRegisterInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineRegisterInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineRegisterInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineRegisterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineLegalCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineLegalCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineLegalCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineLegalCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineLegalFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineLegalFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineLegalFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineLegalFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullLegalCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullLegalCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullLegalCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullLegalCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullLegalFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullLegalFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOnlineFullLegalFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineFullLegalFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflinePersonInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflinePersonInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflinePersonInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflinePersonInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineRegisterInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineRegisterInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineRegisterInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineRegisterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetOfflineFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfflineFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetThisMonthRegisterInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThisMonthRegisterInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetThisMonthRegisterInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThisMonthRegisterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayLegalCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayLegalCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayLegalCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayLegalCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayLegalFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayLegalFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayLegalFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayLegalFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullLegalCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullLegalCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullLegalCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullLegalCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullLegalFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullLegalFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetTodayFullLegalFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTodayFullLegalFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableRegisterInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableRegisterInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableRegisterInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableRegisterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableLegalCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableLegalCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableLegalCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableLegalCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableLegalFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableLegalFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetLastAvailableLegalFacilityInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAvailableLegalFacilityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_LogInquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogInquiry" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_SaveOnlyRegisterInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOnlyRegisterInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_SaveOnlyCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOnlyCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_SaveOnlyFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOnlyFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_SaveOnlyCheckFacilityInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOnlyCheckFacilityInfo" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetSamaChequesResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSamaChequesResult" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetSamaChequesResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSamaChequesResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetCbiSamatResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCbiSamatResult" />
+  </wsdl:message>
+  <wsdl:message name="IInquiryService_GetCbiSamatResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCbiSamatResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInquiryService">
+    <wsdl:operation name="GetPostInfoWithPhoneNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetPostInfoWithPhoneNumber" message="tns:IInquiryService_GetPostInfoWithPhoneNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetPostInfoWithPhoneNumberResponse" message="tns:IInquiryService_GetPostInfoWithPhoneNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostInfoWithPostCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetPostInfoWithPostCode" message="tns:IInquiryService_GetPostInfoWithPostCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetPostInfoWithPostCodeResponse" message="tns:IInquiryService_GetPostInfoWithPostCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineRegisterInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineRegisterInfo" message="tns:IInquiryService_GetOnlineRegisterInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineRegisterInfoResponse" message="tns:IInquiryService_GetOnlineRegisterInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineCheckInfo" message="tns:IInquiryService_GetOnlineCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineCheckInfoResponse" message="tns:IInquiryService_GetOnlineCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLegalCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineLegalCheckInfo" message="tns:IInquiryService_GetOnlineLegalCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineLegalCheckInfoResponse" message="tns:IInquiryService_GetOnlineLegalCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFacilityInfo" message="tns:IInquiryService_GetOnlineFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFacilityInfoResponse" message="tns:IInquiryService_GetOnlineFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLegalFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineLegalFacilityInfo" message="tns:IInquiryService_GetOnlineLegalFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineLegalFacilityInfoResponse" message="tns:IInquiryService_GetOnlineLegalFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullCheckInfo" message="tns:IInquiryService_GetOnlineFullCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullCheckInfoResponse" message="tns:IInquiryService_GetOnlineFullCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullFacilityInfo" message="tns:IInquiryService_GetOnlineFullFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullFacilityInfoResponse" message="tns:IInquiryService_GetOnlineFullFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullLegalCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullLegalCheckInfo" message="tns:IInquiryService_GetOnlineFullLegalCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullLegalCheckInfoResponse" message="tns:IInquiryService_GetOnlineFullLegalCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullLegalFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullLegalFacilityInfo" message="tns:IInquiryService_GetOnlineFullLegalFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOnlineFullLegalFacilityInfoResponse" message="tns:IInquiryService_GetOnlineFullLegalFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflinePersonInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOfflinePersonInfo" message="tns:IInquiryService_GetOfflinePersonInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOfflinePersonInfoResponse" message="tns:IInquiryService_GetOfflinePersonInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineRegisterInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineRegisterInfo" message="tns:IInquiryService_GetOfflineRegisterInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineRegisterInfoResponse" message="tns:IInquiryService_GetOfflineRegisterInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineCheckInfo" message="tns:IInquiryService_GetOfflineCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineCheckInfoResponse" message="tns:IInquiryService_GetOfflineCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineFacilityInfo" message="tns:IInquiryService_GetOfflineFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetOfflineFacilityInfoResponse" message="tns:IInquiryService_GetOfflineFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThisMonthRegisterInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetThisMonthRegisterInfo" message="tns:IInquiryService_GetThisMonthRegisterInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetThisMonthRegisterInfoResponse" message="tns:IInquiryService_GetThisMonthRegisterInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayCheckInfo" message="tns:IInquiryService_GetTodayCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayCheckInfoResponse" message="tns:IInquiryService_GetTodayCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayLegalCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayLegalCheckInfo" message="tns:IInquiryService_GetTodayLegalCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayLegalCheckInfoResponse" message="tns:IInquiryService_GetTodayLegalCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFacilityInfo" message="tns:IInquiryService_GetTodayFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFacilityInfoResponse" message="tns:IInquiryService_GetTodayFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayLegalFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayLegalFacilityInfo" message="tns:IInquiryService_GetTodayLegalFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayLegalFacilityInfoResponse" message="tns:IInquiryService_GetTodayLegalFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullCheckInfo" message="tns:IInquiryService_GetTodayFullCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullCheckInfoResponse" message="tns:IInquiryService_GetTodayFullCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullFacilityInfo" message="tns:IInquiryService_GetTodayFullFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullFacilityInfoResponse" message="tns:IInquiryService_GetTodayFullFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullLegalCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullLegalCheckInfo" message="tns:IInquiryService_GetTodayFullLegalCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullLegalCheckInfoResponse" message="tns:IInquiryService_GetTodayFullLegalCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullLegalFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullLegalFacilityInfo" message="tns:IInquiryService_GetTodayFullLegalFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetTodayFullLegalFacilityInfoResponse" message="tns:IInquiryService_GetTodayFullLegalFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableRegisterInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableRegisterInfo" message="tns:IInquiryService_GetLastAvailableRegisterInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableRegisterInfoResponse" message="tns:IInquiryService_GetLastAvailableRegisterInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableCheckInfo" message="tns:IInquiryService_GetLastAvailableCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableCheckInfoResponse" message="tns:IInquiryService_GetLastAvailableCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableLegalCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableLegalCheckInfo" message="tns:IInquiryService_GetLastAvailableLegalCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableLegalCheckInfoResponse" message="tns:IInquiryService_GetLastAvailableLegalCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableFacilityInfo" message="tns:IInquiryService_GetLastAvailableFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableFacilityInfoResponse" message="tns:IInquiryService_GetLastAvailableFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableLegalFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableLegalFacilityInfo" message="tns:IInquiryService_GetLastAvailableLegalFacilityInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetLastAvailableLegalFacilityInfoResponse" message="tns:IInquiryService_GetLastAvailableLegalFacilityInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogInquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/LogInquiry" message="tns:IInquiryService_LogInquiry_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyRegisterInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/SaveOnlyRegisterInfo" message="tns:IInquiryService_SaveOnlyRegisterInfo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/SaveOnlyCheckInfo" message="tns:IInquiryService_SaveOnlyCheckInfo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/SaveOnlyFacilityInfo" message="tns:IInquiryService_SaveOnlyFacilityInfo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyCheckFacilityInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/SaveOnlyCheckFacilityInfo" message="tns:IInquiryService_SaveOnlyCheckFacilityInfo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamaChequesResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetSamaChequesResult" message="tns:IInquiryService_GetSamaChequesResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetSamaChequesResultResponse" message="tns:IInquiryService_GetSamaChequesResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCbiSamatResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInquiryService/GetCbiSamatResult" message="tns:IInquiryService_GetCbiSamatResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInquiryService/GetCbiSamatResultResponse" message="tns:IInquiryService_GetCbiSamatResult_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInquiryService" type="tns:IInquiryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPostInfoWithPhoneNumber">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetPostInfoWithPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostInfoWithPostCode">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetPostInfoWithPostCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineRegisterInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineRegisterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLegalCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineLegalCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineLegalFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineLegalFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineFullCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineFullFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullLegalCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineFullLegalCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineFullLegalFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOnlineFullLegalFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflinePersonInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOfflinePersonInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineRegisterInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOfflineRegisterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOfflineCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetOfflineFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThisMonthRegisterInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetThisMonthRegisterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayLegalCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayLegalCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayLegalFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayLegalFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayFullCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayFullFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullLegalCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayFullLegalCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodayFullLegalFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetTodayFullLegalFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableRegisterInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetLastAvailableRegisterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetLastAvailableCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableLegalCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetLastAvailableLegalCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetLastAvailableFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailableLegalFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetLastAvailableLegalFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogInquiry">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/LogInquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyRegisterInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/SaveOnlyRegisterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/SaveOnlyCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/SaveOnlyFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOnlyCheckFacilityInfo">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/SaveOnlyCheckFacilityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamaChequesResult">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetSamaChequesResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCbiSamatResult">
+      <soap:operation soapAction="http://tempuri.org/IInquiryService/GetCbiSamatResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InquiryService">
+    <wsdl:port name="BasicHttpBinding_IInquiryService" binding="tns:BasicHttpBinding_IInquiryService">
+      <soap:address location="http://ssv-cr.cr24.ir:8082/InquiryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

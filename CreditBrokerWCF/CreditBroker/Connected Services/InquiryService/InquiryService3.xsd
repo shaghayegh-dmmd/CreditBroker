@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.FullModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="FullPostInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Avenue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloorNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parish" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreAvenue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReqInquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SideFloor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TownShip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FullPostInfo" nillable="true" type="tns:FullPostInfo" />
+  <xs:complexType name="FullCheckInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CDSbt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckAmountSum" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CheckCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CheckInformationItems" nillable="true" type="tns:ArrayOfFCheckInformationItem" />
+      <xs:element minOccurs="0" name="DTSbt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsErrorHappened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NOSbt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReqInquiryDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FullCheckInfo" nillable="true" type="tns:FullCheckInfo" />
+  <xs:complexType name="ArrayOfFCheckInformationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FCheckInformationItem" nillable="true" type="tns:FCheckInformationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFCheckInformationItem" nillable="true" type="tns:ArrayOfFCheckInformationItem" />
+  <xs:complexType name="FCheckInformationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCNTNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AMCHQ" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BCKDTCHQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CDARZ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CDBNK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CDSHB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONVRATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTCHQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDCHQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOCHQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FCheckInformationItem" nillable="true" type="tns:FCheckInformationItem" />
+  <xs:complexType name="FullFacilityInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadHesabiDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityInformationItems" nillable="true" type="tns:ArrayOfFFacilityInformationItem" />
+      <xs:element minOccurs="0" name="IdNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsErrorHappened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReqInquiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SabtCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SabtDT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SabtNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalAmBedehi" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmMashkuk" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmMoavagh" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmOriginal" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmSarResid" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmTahodST" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalAmTashilat" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FullFacilityInfo" nillable="true" type="tns:FullFacilityInfo" />
+  <xs:complexType name="ArrayOfFFacilityInformationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FFacilityInformationItem" nillable="true" type="tns:FFacilityInformationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFFacilityInformationItem" nillable="true" type="tns:ArrayOfFFacilityInformationItem" />
+  <xs:complexType name="FFacilityInformationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmBedehiKol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMashkuk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMoavagh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArzCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArzRate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BnkCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BnkShb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GhrType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequstNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequstType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShbCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FFacilityInformationItem" nillable="true" type="tns:FFacilityInformationItem" />
+</xs:schema>

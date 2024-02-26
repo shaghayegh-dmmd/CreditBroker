@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ESS.Inquiry.DAL.BankInqModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SamaChequesResponseResultWithJson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsServiceStatusOk" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SamaBouncedChequesResponse" nillable="true" type="tns:SamaBouncedChequesResponse" />
+      <xs:element minOccurs="0" name="SamaBouncedChequesResponseJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SamaClearedChequesResponse" nillable="true" type="tns:SamaClearedChequesResponse" />
+      <xs:element minOccurs="0" name="SamaClearedChequesResponseJson" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaChequesResponseResultWithJson" nillable="true" type="tns:SamaChequesResponseResultWithJson" />
+  <xs:complexType name="SamaBouncedChequesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cheques" nillable="true" type="tns:ArrayOfSamaCheque" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfSamaError" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:SamaPerson" />
+      <xs:element minOccurs="0" name="RequestDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaBouncedChequesResponse" nillable="true" type="tns:SamaBouncedChequesResponse" />
+  <xs:complexType name="ArrayOfSamaCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamaCheque" nillable="true" type="tns:SamaCheque" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamaCheque" nillable="true" type="tns:ArrayOfSamaCheque" />
+  <xs:complexType name="SamaCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:long" />
+      <xs:element minOccurs="0" name="BankCode" type="xs:int" />
+      <xs:element minOccurs="0" name="BouncedAmount" type="xs:long" />
+      <xs:element minOccurs="0" name="BouncedBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BouncedDate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BouncedReason" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="BranchBounced" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchOrigin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelKind" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyRate" type="xs:double" />
+      <xs:element minOccurs="0" name="CustomerType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeadlineDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCheque" type="xs:long" />
+      <xs:element minOccurs="0" name="OriginBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serial" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaCheque" nillable="true" type="tns:SamaCheque" />
+  <xs:complexType name="ArrayOfSamaError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamaError" nillable="true" type="tns:SamaError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamaError" nillable="true" type="tns:ArrayOfSamaError" />
+  <xs:complexType name="SamaError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaError" nillable="true" type="tns:SamaError" />
+  <xs:complexType name="SamaPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaPerson" nillable="true" type="tns:SamaPerson" />
+  <xs:complexType name="SamaClearedChequesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cheques" nillable="true" type="tns:ArrayOfSamaClearedCheque" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfSamaError" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Person" nillable="true" type="tns:SamaPerson" />
+      <xs:element minOccurs="0" name="RequestDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaClearedChequesResponse" nillable="true" type="tns:SamaClearedChequesResponse" />
+  <xs:complexType name="ArrayOfSamaClearedCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamaClearedCheque" nillable="true" type="tns:SamaClearedCheque" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamaClearedCheque" nillable="true" type="tns:ArrayOfSamaClearedCheque" />
+  <xs:complexType name="SamaClearedCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:long" />
+      <xs:element minOccurs="0" name="BankCode" type="xs:int" />
+      <xs:element minOccurs="0" name="BouncedAmount" type="xs:long" />
+      <xs:element minOccurs="0" name="BouncedBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BouncedDate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BouncedReason" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="BranchBounced" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchOrigin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChannelKind" type="xs:int" />
+      <xs:element minOccurs="0" name="ClearedBank" type="xs:int" />
+      <xs:element minOccurs="0" name="ClearedBranch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClearedBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClearedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClearedType" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyRate" type="xs:double" />
+      <xs:element minOccurs="0" name="CustomerType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeadlineDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IBAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCheque" type="xs:long" />
+      <xs:element minOccurs="0" name="OriginBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Serial" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamaClearedCheque" nillable="true" type="tns:SamaClearedCheque" />
+  <xs:complexType name="CbiSamatResponseResultWithJson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CbiSamatEstelamAsli2Response" nillable="true" type="tns:CbiSamatEstelamAsli2Response" />
+      <xs:element minOccurs="0" name="CbiSamatEstelamAsli2ResponseJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CbiSamatEstelamTasviehResponse" nillable="true" type="tns:CbiSamatEstelamTasviehResponse" />
+      <xs:element minOccurs="0" name="CbiSamatEstelamTasviehResponseJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CbiSamatEstelamZamenResponse" nillable="true" type="tns:CbiSamatEstelamZamenResponse" />
+      <xs:element minOccurs="0" name="CbiSamatEstelamZamenResponseJson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsServiceStatusOk" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CbiSamatResponseResultWithJson" nillable="true" type="tns:CbiSamatResponseResultWithJson" />
+  <xs:complexType name="CbiSamatEstelamAsli2Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfSamatError" />
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnValue" nillable="true" type="tns:SamatEstelamAsli" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CbiSamatEstelamAsli2Response" nillable="true" type="tns:CbiSamatEstelamAsli2Response" />
+  <xs:complexType name="ArrayOfSamatError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamatError" nillable="true" type="tns:SamatError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamatError" nillable="true" type="tns:ArrayOfSamatError" />
+  <xs:complexType name="SamatError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorDsc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatError" nillable="true" type="tns:SamatError" />
+  <xs:complexType name="SamatEstelamAsli">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadHesabiDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstelamAsliRows" nillable="true" type="tns:ArrayOfSamatEstelamAsliRow" />
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseRes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamAsli" nillable="true" type="tns:SamatEstelamAsli" />
+  <xs:complexType name="ArrayOfSamatEstelamAsliRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamatEstelamAsliRow" nillable="true" type="tns:SamatEstelamAsliRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamatEstelamAsliRow" nillable="true" type="tns:ArrayOfSamatEstelamAsliRow" />
+  <xs:complexType name="SamatEstelamAsliRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdamSabtSanadEntezami" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBedehiKol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmDirkard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmEltezam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMashkuk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMoavagh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSukht" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmTahod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArzCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DasteBandi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEstehal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estehal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HadafAzDaryaft" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainIdNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainLgId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceCdMasraf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequstType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RsrcTamin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamAsliRow" nillable="true" type="tns:SamatEstelamAsliRow" />
+  <xs:complexType name="CbiSamatEstelamTasviehResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfSamatError" />
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnValue" nillable="true" type="tns:SamatEstelamTasvieh" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CbiSamatEstelamTasviehResponse" nillable="true" type="tns:CbiSamatEstelamTasviehResponse" />
+  <xs:complexType name="SamatEstelamTasvieh">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadHesabiDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstelamTasviehRow" nillable="true" type="tns:ArrayOfSamatEstelamTasviehRow" />
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseRes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamTasvieh" nillable="true" type="tns:SamatEstelamTasvieh" />
+  <xs:complexType name="ArrayOfSamatEstelamTasviehRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamatEstelamTasviehRow" nillable="true" type="tns:SamatEstelamTasviehRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamatEstelamTasviehRow" nillable="true" type="tns:ArrayOfSamatEstelamTasviehRow" />
+  <xs:complexType name="SamatEstelamTasviehRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdamSabtSanadEntezami" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBedehiKol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmDirkard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmEltezam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMashkuk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMoavagh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSukht" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmTahod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArzCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DasteBandi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEstehal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateTasvieh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estehal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HadafAzDaryaft" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainIdNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainLgId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceCdMasraf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequstType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RsrcTamin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamTasviehRow" nillable="true" type="tns:SamatEstelamTasviehRow" />
+  <xs:complexType name="CbiSamatEstelamZamenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfSamatError" />
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnValue" nillable="true" type="tns:SamatEstelamZamen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CbiSamatEstelamZamenResponse" nillable="true" type="tns:CbiSamatEstelamZamenResponse" />
+  <xs:complexType name="SamatEstelamZamen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstelamZamenRows" nillable="true" type="tns:ArrayOfSamatEstelamZamenRow" />
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseEstlm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShenaseRes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamZamen" nillable="true" type="tns:SamatEstelamZamen" />
+  <xs:complexType name="ArrayOfSamatEstelamZamenRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SamatEstelamZamenRow" nillable="true" type="tns:SamatEstelamZamenRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSamatEstelamZamenRow" nillable="true" type="tns:ArrayOfSamatEstelamZamenRow" />
+  <xs:complexType name="SamatEstelamZamenRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmBedehiKol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmDirkard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmEltezam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMashkuk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmMoavagh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmSukht" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmTahod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateSarResid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrcntZemanat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequstType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShobeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZmntIdNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZmntLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZmntLgId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZmntName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SamatEstelamZamenRow" nillable="true" type="tns:SamatEstelamZamenRow" />
+</xs:schema>

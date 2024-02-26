@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="546b204d-92f1-4c0d-9bf6-c48f2c6fc3f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ssv-cr.cr24.ir:8082/InquiryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InquiryService.disco" MetadataType="Disco" ID="62aa0f83-fb2d-45be-a034-d1afd514da89" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?disco" />
+    <MetadataFile FileName="InquiryService.xsd" MetadataType="Schema" ID="d4c7899d-6ac8-4015-b6bc-35a97b5d6089" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="InquiryService1.xsd" MetadataType="Schema" ID="81acf53b-4453-43a0-a41a-14f4226d4852" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd4" />
+    <MetadataFile FileName="InquiryService2.xsd" MetadataType="Schema" ID="259407ef-381f-4671-912a-d6b00f4c8630" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd5" />
+    <MetadataFile FileName="InquiryService3.xsd" MetadataType="Schema" ID="e09778ad-d189-470a-878a-bec2ff70247a" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="InquiryService4.xsd" MetadataType="Schema" ID="988e9e37-6ddf-46db-99e5-1bf3a1f6fc68" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="InquiryService5.xsd" MetadataType="Schema" ID="7aa489b8-6559-48ad-a6ed-dc0b0749a2e9" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="InquiryService.wsdl" MetadataType="Wsdl" ID="1dfd64c8-a12e-46aa-a451-6d338d8a62b0" SourceId="1" SourceUrl="http://ssv-cr.cr24.ir:8082/InquiryService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
